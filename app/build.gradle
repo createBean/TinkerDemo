@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    signingConfigs {
+        debug {
+            storeFile rootProject.file("keystore/debug.keystore")
+        }
+    }
+    defaultConfig {
+        applicationId "com.yu.tinker"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        multiDexKeepProguard file("tinkerMultidexKeep.pro")
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.1.7'
+    testCompile 'junit:junit:4.12'
+    provided 'com.tinkerpatch.tinker:tinker-android-anno:1.7.11'
+}
+
+repositories {
+    mavenCentral()
+}
+apply from: 'tinkerpatch.gradle'
