@@ -4,3 +4,7 @@ Tinker是微信团队开源的Android热修复工具，支持dex, library和reso
 #### 集成微信Tinker, 热补丁及时修复问题
 使用TinkerPatch，一键集成，TinkerPatch 平台帮你做了这些工作，提供了补丁后台托管，版本管理，保证传输安全等功能，让你无需搭建一个后台，无需关心部署操作，只需引入一个 SDK 即可立即使用 Tinker。
 #### 根据基准包生成的补丁后，在TinkerPatch后台发布，默认三小时检测一次。
+### TinkerPatch后台操作补丁全量发布
+![image](http://upload-images.jianshu.io/upload_images/3794407-02255424818eaee5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](http://upload-images.jianshu.io/upload_images/3794407-3035a4f49ac15dff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](http://upload-images.jianshu.io/upload_images/3794407-0e723564e4cc9de2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
